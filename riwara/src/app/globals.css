@@ -1,7 +1,38 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root { color-scheme: dark; }
-body { @apply bg-ink text-ivory font-sans antialiased; }
-:focus-visible { outline: 2px solid #D4B87E; outline-offset: 3px; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+:root {
+  color-scheme: dark;
+  --font-serif: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
+  --font-sans: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  @apply bg-ink text-ivory font-sans antialiased;
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+}
+
+:focus-visible {
+  outline: 2px solid #D4B87E;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
