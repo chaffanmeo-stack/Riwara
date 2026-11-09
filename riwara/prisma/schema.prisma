@@ -1,24 +1,111 @@
-generator client { provider = "prisma-client-js" }
+
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
-enum UserStatus { ACTIVE SUSPENDED }
-enum ProductType { OWN_STOCK AFFILIATE WHATSAPP }
-enum ProductStatus { DRAFT PUBLISHED ARCHIVED }
-enum CategoryKind { CLOTHING WATCHES SHAWLS ACCESSORIES PERFUMES }
-enum OrderStatus { PENDING CONFIRMED PROCESSING SHIPPED DELIVERED CANCELLED }
-enum PaymentStatus { UNPAID PENDING PAID FAILED REFUNDED PARTIALLY_REFUNDED }
-enum PaymentMethod { COD ONLINE }
-enum RefundStatus { REQUESTED APPROVED PROCESSED REJECTED }
-enum ShipmentStatus { PENDING PACKED IN_TRANSIT DELIVERED RETURNED }
-enum MovementType { PURCHASE SALE ADJUSTMENT RETURN RESERVATION RELEASE }
-enum RequestStatus { REQUESTED APPROVED REJECTED COMPLETED }
-enum CouponKind { PERCENT FIXED }
-enum ReviewStatus { PENDING APPROVED REJECTED }
-enum CommissionStatus { PENDING CONFIRMED PAID VOID }
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum ProductType {
+  OWN_STOCK
+  AFFILIATE
+  WHATSAPP
+}
+
+enum ProductStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum CategoryKind {
+  CLOTHING
+  WATCHES
+  SHAWLS
+  ACCESSORIES
+  PERFUMES
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum PaymentMethod {
+  COD
+  ONLINE
+}
+
+enum RefundStatus {
+  REQUESTED
+  APPROVED
+  PROCESSED
+  REJECTED
+}
+
+enum ShipmentStatus {
+  PENDING
+  PACKED
+  IN_TRANSIT
+  DELIVERED
+  RETURNED
+}
+
+enum MovementType {
+  PURCHASE
+  SALE
+  ADJUSTMENT
+  RETURN
+  RESERVATION
+  RELEASE
+}
+
+enum RequestStatus {
+  REQUESTED
+  APPROVED
+  REJECTED
+  COMPLETED
+}
+
+enum CouponKind {
+  PERCENT
+  FIXED
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum CommissionStatus {
+  PENDING
+  CONFIRMED
+  PAID
+  VOID
+}
+
 
 model Role {
   id          String   @id @default(cuid())
